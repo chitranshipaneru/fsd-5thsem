@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="color: #91421e;">STUDENT MANAGEMENT SYSTEM</h1>
+
+<div class="form">
+    <input id="name" placeholder="Student Name">
+    <input id="roll" placeholder="Roll No">
+
+    <select id="course">
+        <option value="">Select Course</option>
+        <option>BCA</option>
+        <option>B.Tech</option>
+        <option>MCA</option>
+        <option>MBA</option>
+    </select>
+
+    <input id="marks" type="number" placeholder="Marks">
+
+    <button id="submit">Submit</button>
+</div>
+
+<input id="search" placeholder="Search by Name or Roll No">
+
+<div class="stats">
+    <div>Total Students: <b id="total">0</b></div>
+    <div>Average Marks: <b id="average">0</b></div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="table"></tbody>
+</table>
+
+<script src="index.js"></script>
+</body>
+</html>
