@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider and Rotator</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1 {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- IMAGE SLIDER -->
+    <h1>Image Slider</h1>
+
+    <img id="sliderImage"
+         src="1.jpg"
+         alt="Slider Image">
+
+    <br>
+
+    <button onclick="previousImage()">Left</button>
+    <button onclick="nextImage()">Right</button>
+
+
+    <!-- IMAGE ROTATOR -->
+    <h1>Image Rotator</h1>
+
+    <img id="rotatorImage"
+         src="cc.jpg"
+         alt="Rotator Image">
+
+    <br>
+
+    <button onclick="rotateLeft()">Left</button>
+    <button onclick="rotateRight()">Right</button>
+
+
+    <script>
+
+        // IMAGE SLIDER
+
+        let images = [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ];
+
+        let index = 0;
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("sliderImage").src = images[index];
+        }
+
+        function previousImage() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("sliderImage").src = images[index];
+        }
+
+
+        // IMAGE ROTATOR
+
+        let rotation = 0;
+
+        function rotateLeft() {
+            rotation -= 90;
+            document.getElementById("rotatorImage").style.transform =
+                "rotate(" + rotation + "deg)";
+        }
+
+        function rotateRight() {
+            rotation += 90;
+            document.getElementById("rotatorImage").style.transform =
+                "rotate(" + rotation + "deg)";
+        }
+
+    </script>
+
+</body>
+</html>
